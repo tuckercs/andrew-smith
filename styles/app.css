@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+@import './_reset.css';
+@import './_base.css';
+@import './_components.css';
+@import './_utilities.css';
+@import './_marqy.css';
+@import './_forms.css';
+
+@theme {
+  /* Spacing */
+  --spacing: 0.1rem;
+
+  /* Breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 800px;
+  --breakpoint-md: 1000px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1400px;
+  --breakpoint-xxl: 1600px;
+
+  /* Base Colors */
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-pageBg: #fff;
+  --color-pageText: #000;
+
+  /* Theme Colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-error: #ff0000;
+  --color-success: #00ff00;
+  --color-warning: #ffff00;
+  --color-info: #0000ff;
+  --color-light: #f0f0f0;
+  --color-dark: #333333;
+  --color-muted: #666666;
+  --color-subtle: #e0e0e0;
+
+  /* Custom Colors */
+  --color-primary: #000;
+  --color-secondary: #fff;
+  --color-tertiary: #000;
+
+  /* Fonts */
+  --font-sans: 'helvetica', 'sans-serif';
+  --font-mono: 'courier', 'monospace';
+
+  --font-heading: 'Georgia', 'serif';
+  --font-subheading: 'Courier', 'monospace';
+  --font-body: 'Helvetica', 'arial', 'sans-serif';
+
+  --leading-*: initial;
+  --tracking-*: initial;
+
+  /* Easing */
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-fade: cubic-bezier(0.25, 0.1, 0, 1);
+}
+
+@utility text-* {
+  font-size: calc(var(--spacing) * --value(number));
+}
+
+@utility leading-* {
+  line-height: calc(--value(number) / 100);
+}
+
+@utility tracking-* {
+  letter-spacing: calc(--value(number) * 0.01em);
+}
+
+@utility -tracking-* {
+  letter-spacing: calc((--value(number) * -1) * 0.01em);
+}

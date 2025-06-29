@@ -1,0 +1,125 @@
+@layer base {
+  @font-face {
+    font-family: 'Alright Mono Regular';
+    src:
+      url('/fonts/AlrightMono-Regular.woff2') format('woff2'),
+      url('/fonts/AlrightMono-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Peclet ';
+    src: url('/fonts/Peclet-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    @apply bg-white text-[10px];
+  }
+
+  html,
+  body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply min-h-lvh flex flex-col;
+  }
+
+  strong {
+    @apply font-bold;
+  }
+
+  em {
+    @apply italic;
+  }
+
+  ul,
+  ol {
+    @apply m-0 list-none p-0;
+  }
+
+  /* Links */
+  a,
+  button {
+    &:where(:not(.btn)) {
+      @apply text-current;
+    }
+  }
+
+  button {
+    @apply clean-btn;
+  }
+
+  /* Images */
+  figure {
+    @apply relative m-0 max-w-none;
+  }
+
+  /* Misc. */
+  hr {
+    @apply my-32 h-0 border-0 border-t border-black sm:my-54;
+  }
+
+  input,
+  textarea {
+    @apply relative w-full appearance-none rounded-none bg-transparent !bg-none text-start;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      @apply bg-transparent text-current;
+    }
+  }
+
+  textarea {
+    @apply resize-none;
+  }
+
+  a[href='#content'].skip-link {
+    @apply block fixed top-0 left-1/2 -translate-x-1/2 -translate-y-full z-9 px-8 py-4 text-12 leading-125 font-semibold uppercase;
+
+    &:focus {
+      @apply translate-y-0 outline-none;
+    }
+  }
+
+  /* global focus state */
+  a,
+  button,
+  details {
+    @apply focus-visible-solid;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply focus:outline-none;
+  }
+
+  /* Section focus state */
+  section {
+    @apply focus:outline-none;
+  }
+
+  /* Custom scrollbar */
+  /* body::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  body::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-white/15;
+  } */
+}

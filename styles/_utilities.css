@@ -1,0 +1,85 @@
+/* Sizing helpers */
+@utility min-h-dvh {
+  @apply min-h-[calc(var(--dvh,1vh)*100)];
+}
+
+@utility min-h-lvh {
+  @apply min-h-[calc(var(--vh,1vh)*100)];
+}
+
+@utility h-dvh {
+  @apply h-[calc(var(--dvh,1vh)*100)];
+}
+
+@utility h-lvh {
+  @apply h-[calc(var(--vh,1vh)*100)];
+}
+
+/* Grid Helpers */
+@utility site-grid-container {
+  @apply grid grid-cols-6 gap-x-10 sm:grid-cols-12 sm:gap-x-20;
+}
+
+/* Spacing helpers */
+@utility section-y-spacing {
+  @apply py-40 sm:py-40;
+}
+
+@utility section-x-spacing {
+  @apply px-10 sm:px-20;
+}
+
+/* Text alignment helpers */
+@utility text-start {
+  text-align: start;
+}
+
+@utility text-end {
+  text-align: end;
+}
+
+/* Focus helpers */
+@utility focus-visible-solid {
+  @apply focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-black;
+}
+@utility focus-within-solid {
+  @apply focus-within:outline focus-within:outline-offset-2 focus-within:outline-black;
+}
+
+/* Scrollbar helpers */
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+@utility scroll-overflow {
+  @apply overflow-auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Extras */
+
+@utility clean-btn {
+  @apply appearance-none outline-none disabled:cursor-not-allowed;
+}
+
+@utility text-stroke {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: inherit;
+  -webkit-text-stroke-width: 1px;
+  text-stroke: 1px inherit;
+}
+
+@utility text-stroke-0 {
+  -webkit-text-fill-color: initial;
+  -webkit-text-stroke-width: 0;
+  text-stroke: initial;
+}
+
+@utility text-stroke-fill {
+  -webkit-text-fill-color: inherit;
+}

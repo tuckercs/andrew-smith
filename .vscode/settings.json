@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.printWidth": 80,
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Use Prettier as the default formatter
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

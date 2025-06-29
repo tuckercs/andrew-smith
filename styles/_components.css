@@ -1,0 +1,31 @@
+@layer components {
+  /* Headlines */
+  .text-h1 {
+    @apply font-heading my-0 mb-15 text-55 leading-105 -tracking-2 sm:text-55;
+  }
+  .text-h2 {
+    @apply font-subheading my-0 mb-15 text-40 leading-105 -tracking-3 sm:text-40;
+  }
+  .text-h3 {
+    @apply font-subheading my-0 mb-15 text-32 leading-97 -tracking-3 sm:text-32;
+  }
+  .text-h4 {
+    @apply font-heading my-0 mb-15 text-16 leading-105 sm:text-16;
+  }
+
+  /* Paragraphs */
+  .text-body {
+    @apply font-body my-0 mb-15 text-20 leading-105 sm:text-20;
+  }
+  .text-body-small {
+    @apply font-body my-0 mb-10 text-12 leading-105 sm:text-12;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply cursor-pointer rounded-full bg-white/75 text-black/50 px-10 py-7;
+    &:not(.disabled) {
+      @apply bg-white/100 text-black/100 hover:bg-black hover:text-white transition-colors duration-150 ease-linear;
+    }
+  }
+}
