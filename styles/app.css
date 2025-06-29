@@ -45,12 +45,12 @@
   --color-tertiary: #000;
 
   /* Fonts */
-  --font-sans: 'helvetica', 'sans-serif';
-  --font-mono: 'courier', 'monospace';
+  --font-sans: 'Neue Haas Display', 'helvetica', 'sans-serif';
+  --font-mono: 'ABC Diatype Mono Condensed', 'courier', 'monospace';
 
-  --font-heading: 'Georgia', 'serif';
-  --font-subheading: 'Courier', 'monospace';
-  --font-body: 'Helvetica', 'arial', 'sans-serif';
+  --font-heading: 'LETO', 'Georgia', 'serif';
+  --font-subheading: 'Neue Haas Grotesk', 'Courier', 'monospace';
+  --font-body: 'Neue Haas Display', 'Helvetica', 'arial', 'sans-serif';
 
   --leading-*: initial;
   --tracking-*: initial;

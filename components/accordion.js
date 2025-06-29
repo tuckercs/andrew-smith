@@ -34,32 +34,27 @@ const Accordion = ({
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         className={cx(
-          `w-full flex  accordion--toggle${open ? ' is-open' : ''}`,
-          { 'justify-between pb-20': !simple }
+          `w-full flex justify-between items-center cursor-pointer border-b border-black/25  accordion--toggle${open ? ' is-open' : ''}`,
         )}
       >
         {!simple && (
-          <span className={cx('text-left uppercase', {})}>{title}</span>
+          <div className={cx('text-left uppercase text-h4 my-5', {})}>
+            {title}
+          </div>
         )}
 
         <span className="text-accent is-body-large">
-          <div
-            className={cx('w-20 h-20 flex justify-center ', {
-              'bg-white': simple,
-              'bg-black': open,
-              'bg-grey': !open,
-            })}
-          >
+          <div className={cx('w-20 h-20 flex justify-center ', {})}>
             <Icon
               name="Plus"
               viewBox="0 0 13 13"
-              color={simple ? '#000' : open ? '#fff' : '#000'}
+              color={'#000'}
               className={cx('w-10 transition-transform', { 'rotate-45': open })}
             />
           </div>
         </span>
 
-        {simple && <span className={cx('text-left', {})}>{title}</span>}
+        {simple && <div className={cx('text-h2', {})}>{title}</div>}
       </button>
 
       <AnimatePresence initial={false}>
@@ -78,7 +73,7 @@ const Accordion = ({
           >
             <div
               className={cx('accordion-content', {
-                'pb-50 sm:pb-20': !simple,
+                'py-10 mx-10': !simple,
                 'ml-20': simple,
               })}
             >

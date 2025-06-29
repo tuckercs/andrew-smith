@@ -169,6 +169,28 @@ export const pageSections = {
     }
   }`,
 
+  portfolio: groq`
+  _type == 'portfolio' => {
+    marqueeTitle,
+    images[]{
+      ${imageMeta} 
+    },
+    portableText[]{
+        ${ptContent}
+      },
+    accordion[]{
+      title,
+      portableText[]{
+        ${ptContent}
+      },
+    },
+    links[]{
+      title,
+      link,
+      color
+    }
+  }`,
+
   fiftyFifty: groq`
   _type == 'fiftyFifty' => {
     title,

@@ -1,18 +1,104 @@
 @layer base {
+  /* LETO - Heading Font */
   @font-face {
-    font-family: 'Alright Mono Regular';
+    font-family: 'LETO';
     src:
-      url('/fonts/AlrightMono-Regular.woff2') format('woff2'),
-      url('/fonts/AlrightMono-Regular.woff') format('woff');
+      url('/fonts/LETO-Regular.woff2') format('woff2'),
+      url('/fonts/LETO-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Neue Haas Display - Body Font */
+  @font-face {
+    font-family: 'Neue Haas Display';
+    src:
+      url('/fonts/NeueHaasDisplayRoman.woff2') format('woff2'),
+      url('/fonts/NeueHaasDisplayRoman.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Peclet ';
-    src: url('/fonts/Peclet-Regular.woff') format('woff');
+    font-family: 'Neue Haas Display';
+    src:
+      url('/fonts/NeueHaasDisplay-Medium.woff2') format('woff2'),
+      url('/fonts/NeueHaasDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Neue Haas Display';
+    src:
+      url('/fonts/NeueHaasDisplayBlack.woff2') format('woff2'),
+      url('/fonts/NeueHaasDisplayBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Neue Haas Grotesk - Subheading Font */
+  @font-face {
+    font-family: 'Neue Haas Grotesk';
+    src:
+      url('/fonts/NeueHaasGroteskText-Pro-55-Roman.woff2') format('woff2'),
+      url('/fonts/NeueHaasGroteskText-Pro-55-Roman.woff') format('woff');
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* NHaas Grotesk DS Pro - Additional weights */
+  @font-face {
+    font-family: 'NHaas Grotesk DS Pro';
+    src:
+      url('/fonts/NHaasGroteskDSPro-55Rg.woff2') format('woff2'),
+      url('/fonts/NHaasGroteskDSPro-55Rg.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'NHaas Grotesk DS Pro';
+    src:
+      url('/fonts/NHaasGroteskDSPro-75Bd.woff2') format('woff2'),
+      url('/fonts/NHaasGroteskDSPro-75Bd.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ABC Diatype Mono Condensed - Monospace */
+  @font-face {
+    font-family: 'ABC Diatype Mono Condensed';
+    src:
+      url('/fonts/ABCDiatypeMonoCondensed-Regular.woff2') format('woff2'),
+      url('/fonts/ABCDiatypeMonoCondensed-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'ABC Diatype Mono Condensed';
+    src:
+      url('/fonts/ABCDiatypeMonoCondensed-RegularItalic.woff2') format('woff2'),
+      url('/fonts/ABCDiatypeMonoCondensed-RegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Peclet - Additional font */
+  @font-face {
+    font-family: 'Peclet';
+    src: url('/fonts/Peclet-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
   }

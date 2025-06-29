@@ -52,6 +52,7 @@ export default defineType({
         { type: 'textBlock' },
         { type: 'mediaBlock' },
         { type: 'fiftyFifty' },
+        { type: 'portfolio' },
         {
           title: 'Reusable Section',
           type: 'reference',
@@ -67,7 +68,7 @@ export default defineType({
             {
               name: 'general',
               title: 'General',
-              of: ['textBlock', 'mediaBlock', 'fiftyFifty'],
+              of: ['textBlock', 'mediaBlock', 'fiftyFifty', 'portfolio'],
             },
             {
               name: 'reusable',

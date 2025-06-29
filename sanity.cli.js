@@ -3,7 +3,7 @@ const path = require('path')
 
 export default defineCliConfig({
   api: {
-    projectId: 't7q3ep87',
+    projectId: 'mpjno11g',
     dataset: 'production',
     useCdn: false,
   },

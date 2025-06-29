@@ -22,7 +22,10 @@ export default defineType({
       name: 'section',
       type: 'array',
       of: [
-        // common
+        { type: 'textBlock' },
+        { type: 'mediaBlock' },
+        { type: 'fiftyFifty' },
+        { type: 'portfolio' },
       ],
       validation: (Rule) =>
         Rule.length(1).error('You can only have one item per section'),

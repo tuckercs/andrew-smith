@@ -79,24 +79,9 @@ const Layout = ({ site = {}, page = {}, schema, children }) => {
         className="flex flex-1 flex-col"
       >
         <div className="relative flex flex-1 flex-col min-h-dvh">
-          {announcement?.enabled && announcement?.message && (
-            <Link
-              ref={announcementRef}
-              data={announcement.link}
-              className="flex justify-center items-center bg-info text-pageBg py-5"
-            >
-              <h4 className="text-h4 mb-0">{announcement.message}</h4>
-            </Link>
-          )}
-          <SiteHeader
-            data={site}
-            page={page}
-            announcementHeight={announcementHeight}
-          />
           <main id="content" className="flex-1">
             {children}
           </main>
-          <SiteFooter data={site} page={page} />
         </div>
       </m.div>
     </>

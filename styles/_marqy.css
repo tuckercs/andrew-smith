@@ -33,6 +33,7 @@
 }
 
 [data-marqy-item] {
+  display: flex;
   flex-grow: 0;
 }
 

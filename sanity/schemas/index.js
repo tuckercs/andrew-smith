@@ -15,6 +15,7 @@ import redirect from '@schemas/documents/redirect'
 import textBlock from '@schemas/sections/text-block'
 import mediaBlock from '@schemas/sections/media-block'
 import fiftyFifty from '@schemas/sections/fifty-fifty'
+import portfolio from '@schemas/sections/portfolio'
 
 // Object types
 import navDropdown from '@schemas/objects/nav-dropdown'
@@ -44,6 +45,7 @@ export const schemaTypes = [
   textBlock,
   mediaBlock,
   fiftyFifty,
+  portfolio,
 
   /* ----------------------- */
   /* 3: Object types */
