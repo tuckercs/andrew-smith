@@ -104,7 +104,7 @@ const Portfolio = ({ data }) => {
             {accordion &&
               accordion.length > 0 &&
               accordion.map((item) => (
-                <Accordion title={item.title}>
+                <Accordion title={item.title} key={item.title}>
                   <BlockContent
                     blocks={item.portableText}
                     blockComponents={blockComponents}
