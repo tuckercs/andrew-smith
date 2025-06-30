@@ -21,7 +21,6 @@
     @apply font-body my-0 mb-10 text-12 leading-105 sm:text-12;
   }
 
-  /* Buttons */
   .btn-primary {
     @apply cursor-pointer rounded-full bg-white/75 text-black/50 px-10 py-7;
     &:not(.disabled) {
