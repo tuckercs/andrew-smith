@@ -31,8 +31,8 @@ export const singletons = [
 
 export default defineConfig({
   basePath: '/admin',
-  name: 'base',
-  title: 'Base',
+  name: 'andrew-smith',
+  title: 'Andrew Smith',
   projectId,
   dataset,
   schema: {
