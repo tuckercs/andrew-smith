@@ -115,104 +115,114 @@ const Portfolio = ({ data }) => {
         </div>
       </div>
       <div className="col-span-full sm:col-span-4 sm:col-start-9 mt-40 sm:mt-0">
-        <div className="w-full sm:hidden flex items-center justify-between pr-10 pl-0">
-          <div className="flex">
-            <div
-              onClick={() => prevIndex()}
-              role="button"
-              className={cx(
-                'cursor-pointer w-30 h-35 flex justify-center items-center',
-                {},
-              )}
-            >
-              <span>
-                <Icon
-                  name="Arrow"
-                  viewBox="0 0 12 8"
-                  color="currentColor"
-                  className={cx('w-15 transition-transform rotate-180', {})}
-                />
-              </span>
-            </div>
-            <div
-              onClick={() => nextIndex()}
-              role="button"
-              className={cx(
-                'cursor-pointer w-30 h-35 flex justify-center items-center',
-                {},
-              )}
-            >
-              <span>
-                <Icon
-                  name="Arrow"
-                  viewBox="0 0 12 8"
-                  color="currentColor"
-                  className={cx('w-15 transition-transform', {})}
-                />
-              </span>
-            </div>
-          </div>
-          <div className="flex items-center">
-            <div className="text-body">
-              {currentIndex + 1} / {images.length}
-            </div>
-          </div>
-        </div>
-        <div ref={sliderRef} className="overflow-hidden w-full">
-          <div className=" flex">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className="flex-[0_0_auto] mx-10 overflow-hidden transition-opacity w-full max-w-500"
-              >
-                <Image src={image} alt={image.alt} />
+        {images.length > 1 ? (
+          <>
+            <div className="w-full sm:hidden flex items-center justify-between pr-10 pl-0">
+              <div className="flex">
+                <div
+                  onClick={() => prevIndex()}
+                  role="button"
+                  className={cx(
+                    'cursor-pointer w-30 h-35 flex justify-center items-center',
+                    {},
+                  )}
+                >
+                  <span>
+                    <Icon
+                      name="Arrow"
+                      viewBox="0 0 12 8"
+                      color="currentColor"
+                      className={cx('w-15 transition-transform rotate-180', {})}
+                    />
+                  </span>
+                </div>
+                <div
+                  onClick={() => nextIndex()}
+                  role="button"
+                  className={cx(
+                    'cursor-pointer w-30 h-35 flex justify-center items-center',
+                    {},
+                  )}
+                >
+                  <span>
+                    <Icon
+                      name="Arrow"
+                      viewBox="0 0 12 8"
+                      color="currentColor"
+                      className={cx('w-15 transition-transform', {})}
+                    />
+                  </span>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="w-full hidden sm:flex items-center justify-between pr-10 pl-0">
-          <div className="flex">
-            <div
-              onClick={() => prevIndex()}
-              role="button"
-              className={cx(
-                'cursor-pointer w-30 h-35 flex justify-center items-center',
-                {},
-              )}
-            >
-              <span>
-                <Icon
-                  name="Arrow"
-                  viewBox="0 0 12 8"
-                  color="currentColor"
-                  className={cx('w-15 transition-transform rotate-180', {})}
-                />
-              </span>
+              <div className="flex items-center">
+                <div className="text-body">
+                  {currentIndex + 1} / {images.length}
+                </div>
+              </div>
             </div>
-            <div
-              onClick={() => nextIndex()}
-              role="button"
-              className={cx(
-                'cursor-pointer w-30 h-35 flex justify-center items-center',
-                {},
-              )}
-            >
-              <span>
-                <Icon
-                  name="Arrow"
-                  viewBox="0 0 12 8"
-                  color="currentColor"
-                  className={cx('w-15 transition-transform', {})}
-                />
-              </span>
+            <div ref={sliderRef} className="overflow-hidden w-full">
+              <div className=" flex">
+                {images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="flex-[0_0_auto] mx-10 overflow-hidden transition-opacity w-full max-w-500"
+                  >
+                    <Image src={image} alt={image.alt} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="w-full hidden sm:flex items-center justify-between pr-10 pl-0">
+              <div className="flex">
+                <div
+                  onClick={() => prevIndex()}
+                  role="button"
+                  className={cx(
+                    'cursor-pointer w-30 h-35 flex justify-center items-center',
+                    {},
+                  )}
+                >
+                  <span>
+                    <Icon
+                      name="Arrow"
+                      viewBox="0 0 12 8"
+                      color="currentColor"
+                      className={cx('w-15 transition-transform rotate-180', {})}
+                    />
+                  </span>
+                </div>
+                <div
+                  onClick={() => nextIndex()}
+                  role="button"
+                  className={cx(
+                    'cursor-pointer w-30 h-35 flex justify-center items-center',
+                    {},
+                  )}
+                >
+                  <span>
+                    <Icon
+                      name="Arrow"
+                      viewBox="0 0 12 8"
+                      color="currentColor"
+                      className={cx('w-15 transition-transform', {})}
+                    />
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="text-body">
+                  {currentIndex + 1} / {images.length}
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="w-full overflow-hidden">
+            <div className="w-full max-w-500 mx-auto">
+              <Image src={images[0]} alt={images[0].alt} />
             </div>
           </div>
-          <div className="flex items-center">
-            <div className="text-body">
-              {currentIndex + 1} / {images.length}
-            </div>
-          </div>
-        </div>
+        )}
       </div>
 
       <div className="hidden sm:block col-span-full mt-auto">

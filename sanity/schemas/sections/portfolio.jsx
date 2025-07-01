@@ -130,8 +130,19 @@ export default defineType({
             defineField({
               title: 'Link',
               name: 'link',
-              type: 'url',
-              description: 'URL for this link',
+              type: 'string',
+              description: 'URL or mailto: link for this link',
+              validation: (Rule) =>
+                Rule.custom((value) => {
+                  if (!value) return true
+                  if (value.startsWith('mailto:')) return true
+                  try {
+                    new URL(value)
+                    return true
+                  } catch {
+                    return 'Please enter a valid URL or mailto: link'
+                  }
+                }),
             }),
             defineField({
               title: 'Color',
