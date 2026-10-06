@@ -1,7 +1,7 @@
 @layer components {
   /* Headlines */
   .text-h1 {
-    @apply font-heading my-0 mb-15 text-48 sm:text-48 leading-60 sm:leading-110;
+    @apply font-heading font-bold my-0 mb-15 text-48 sm:text-48 leading-60 sm:leading-110;
   }
   .text-h2 {
     @apply font-subheading my-0 mb-15 text-40 leading-105 -tracking-3 sm:text-40;

@@ -26,10 +26,10 @@ const HeadSEO = ({ site = {}, page = {}, schema }) => {
   const faviconPrefix = publicRuntimeConfig?.assetPrefix
     ? `/${publicRuntimeConfig?.assetPrefix}`
     : ''
-  const siteFavicon = site.seo?.favicon || `${faviconPrefix}/favicon.svg`
-  const siteFaviconLegacy =
-    site.seo?.faviconLegacy || `${faviconPrefix}/favicon.ico`
-  const siteTouchIcon = site.seo?.touchIcon
+  // Brand artwork uses the same licensed font as the site.
+  const siteFavicon = `${faviconPrefix}/favicon.svg`
+  const siteFaviconLegacy = `${faviconPrefix}/favicon.ico`
+  const siteTouchIcon = `${faviconPrefix}/apple-touch-icon.png`
 
   const metaTitle = pupa(page.seo?.metaTitle || site.seo?.metaTitle, template, {
     ignoreMissing: true,
@@ -45,12 +45,14 @@ const HeadSEO = ({ site = {}, page = {}, schema }) => {
   )
   const shareDesc = page.seo?.shareDesc || site.seo?.shareDesc
 
-  const shareGraphic =
-    page.seo?.shareGraphic?.asset || site.seo?.shareGraphic?.asset
+  const shareGraphic = page.seo?.shareGraphic?.asset
 
   const pageUrl = new URL(router.asPath, site.liveDomain)
   const canonicalUrl =
     pageUrl.origin + (pageUrl.pathname !== '/' ? pageUrl.pathname : '')
+  const shareGraphicUrl = shareGraphic
+    ? imageBuilder.image(shareGraphic).width(1200).height(630).url()
+    : new URL(`${faviconPrefix}/OG.png`, pageUrl.origin).href
 
   return (
     <Head>
@@ -65,18 +67,10 @@ const HeadSEO = ({ site = {}, page = {}, schema }) => {
       {/* Icons */}
       <link rel="icon" sizes="any" href={siteFaviconLegacy} />
       <link preload="true" rel="icon" type="image/svg+xml" href={siteFavicon} />
-      {siteTouchIcon && (
-        <link
-          rel="apple-touch-icon"
-          href={imageBuilder.image(siteTouchIcon).width(180).height(180).url()}
-        />
-      )}
+      <link rel="apple-touch-icon" href={siteTouchIcon} />
 
       {/* Preconnect Domains */}
       <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="" />
-      {site?.typekitId && (
-        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
-      )}
 
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
@@ -105,26 +99,8 @@ const HeadSEO = ({ site = {}, page = {}, schema }) => {
         </>
       )}
 
-      {shareGraphic && (
-        <>
-          <meta
-            property="og:image"
-            content={imageBuilder
-              .image(shareGraphic)
-              .width(1200)
-              .height(630)
-              .url()}
-          />
-          <meta
-            name="twitter:image"
-            content={imageBuilder
-              .image(shareGraphic)
-              .width(1200)
-              .height(630)
-              .url()}
-          />
-        </>
-      )}
+      <meta property="og:image" content={shareGraphicUrl} />
+      <meta name="twitter:image" content={shareGraphicUrl} />
 
       {/* Schema data (LD+JSON) */}
       {schema && (

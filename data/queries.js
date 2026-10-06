@@ -279,11 +279,7 @@ export const site = groq`
       metaTitle,
       metaDesc,
       shareTitle,
-      shareDesc,
-      shareGraphic,
-      "favicon": favicon.asset->url,
-      "faviconLegacy": faviconLegacy.asset->url,
-      touchIcon
+      shareDesc
     },
     "announcement": *[_type == "announcementSettings"][0]{
       enabled,

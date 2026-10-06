@@ -1,13 +1,13 @@
 @layer base {
-  /* LETO - Heading Font */
+  /* Open-source display font; license is in public/fonts/goldman-OFL.txt. */
   @font-face {
-    font-family: 'LETO';
-    src:
-      url('/fonts/LETO-Regular.woff2') format('woff2'),
-      url('/fonts/LETO-Regular.woff') format('woff');
-    font-weight: 400;
+    font-family: 'Goldman';
+    src: url('/fonts/Goldman-Bold.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
+    /* Keep display capitals at the existing visual size. */
+    size-adjust: 79.25%;
   }
 
   /* Neue Haas Display - Body Font */
